@@ -3,7 +3,9 @@ import os
 import random
 import datetime
 import pygrib
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/Users/binshuaiwang/PycharmProjects/WeatherPrediction/splendid-petal-342115-1abb6da43d9d.json"
+
+cur_location = os.getcwd()
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=cur_location+"/splendid-petal-342115-1abb6da43d9d.json"
 
 def random_date():
     start_date = datetime.date(2014, 9, 18)
@@ -26,9 +28,8 @@ def download(source_blob_name, destination_file_name):
 
 
 storage_client = storage.Client()
-tot = 1000
+tot = 1
 s = set()
-cur_location = os.getcwd()
 
 output = open(cur_location + "/result.txt", "w")
 for i in range(tot):
