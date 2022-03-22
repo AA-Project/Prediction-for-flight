@@ -81,5 +81,5 @@ for i in range(days_between_dates):
         output["{:0>2}_clock_VIL_{}_predict".format(cur_hour, delta_time)] = mmat
         os.remove(cur_location + "/00.grib2")
         #counter +=1
-    with open('output_{}.dat'.format(current_date), 'wb') as f:
+    with open(cur_location+'/hrrrdata/output_{}.dat'.format(current_date), 'wb') as f:
         pickle.dump(output, f)
